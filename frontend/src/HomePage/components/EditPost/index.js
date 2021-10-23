@@ -33,7 +33,6 @@ export default function EditPost(values) {
           );
         }
         return (
-          // <span>{title}</span>
         <Post
           title={title}
           author={author}
