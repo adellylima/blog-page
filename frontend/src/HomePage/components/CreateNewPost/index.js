@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import PostForm from "../PostForm";
+import { Button } from 'reactstrap';
+import { FiPlusCircle } from "react-icons/fi";
+
+import './index.scss';
 
 export default function CreateNewPost(values) {
   const {onPostCreate} = values
@@ -28,6 +32,6 @@ export default function CreateNewPost(values) {
     )
   }
   return (
-    <button onClick={handleCreateClick} className="btn btn-secondary">Create new post</button>
+    <Button onClick={handleCreateClick} className="new-post" title='Add new post'><FiPlusCircle /></Button>
   )
 }

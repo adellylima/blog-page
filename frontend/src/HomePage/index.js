@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import PostList from './components/PostList';
 import CreateNewPost from './components/CreateNewPost';
+import { Container, Row, Col } from 'reactstrap';
+import './index.scss';
 
 export default function Home() {
 
@@ -67,17 +69,19 @@ export default function Home() {
     }
 
   return (
-      <main>
-          <div>
-              <PostList
-                  posts={posts}
-                  onDeleteClick={deletePost}
-                  onUpdateClick={updatePost}
-              ></PostList>
-              <CreateNewPost
-                  onPostCreate={createNewPost}
-              ></CreateNewPost>
-          </div>
-      </main>
+    <Container>
+      <Row className="align-right">
+        <CreateNewPost onPostCreate={createNewPost}></CreateNewPost>
+      </Row>
+      <Row>
+        <Col>
+          <PostList
+              posts={posts}
+              onDeleteClick={deletePost}
+              onUpdateClick={updatePost}
+            ></PostList>
+          </Col>
+      </Row>
+    </Container>
   )
 }

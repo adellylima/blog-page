@@ -1,5 +1,8 @@
 
 import React, { useState } from 'react'
+import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+
+import './index.scss';
 
 export default function PostForm(values) {
   const {id, title, author, text, onCancelClick, onFormSubmit} = values;
@@ -24,43 +27,30 @@ export default function PostForm(values) {
       setPostToSubmit({text: evt.target.value});
     }
     const buttonText = id ? 'Update Post': 'Create Post';
-      return (
-        <form onSubmit={handleFormSubmit}>
-          <div>
-            <label>
-              Title
-            </label>
-            <input type="text" placeholder="Enter a title"
-              value={title} onChange={handleTitleUpdate}
-            />
-          </div>
-          <div>
-            <label>
-              Author
-            </label>
-            <input type="text" placeholder="Author's name"
-              value={author} onChange={handleAuthorUpdate}
-            />
-          </div>
-          <div>
-            <label>
-              Text
-            </label>
-            <textarea placeholder="Blog Text"
-              rows="5" value={text}
-              onChange={handleTextUpdate}
-            >
-              {text}
-            </textarea>
-          </div>
-          <div>
-            <button type="submit">
-              {buttonText}
-            </button>
-            <button type="button" onClick={onCancelClick}>
-              Cancel
-            </button>
-          </div>
-        </form>
-        )
+    return (
+      <Form onSubmit={handleFormSubmit} className="post-form">
+        <Row>
+          <Col>
+             <FormGroup>
+              <Label for="title">Title</Label>
+              <Input type="text" onChange={handleTitleUpdate} name="title" id="title" placeholder="Enter a title" />
+            </FormGroup>
+        </Col>
+        <Col>
+          <FormGroup>
+            <Label for="author">Author</Label>
+            <Input type="text" onChange={handleAuthorUpdate} name="author" id="author" placeholder="Author's name" />
+          </FormGroup>
+        </Col>
+        </Row>
+        <FormGroup>
+          <Label for="text">Text</Label>
+          <Input type="textarea" onChange={handleTextUpdate} name="text" id="text" placeholder="Text" />
+        </FormGroup>
+        <FormGroup className="button-group">
+          <Button>{buttonText}</Button>
+          <Button type="button" onClick={onCancelClick}>Cancel</Button>
+        </FormGroup>
+      </Form>
+    )
   }

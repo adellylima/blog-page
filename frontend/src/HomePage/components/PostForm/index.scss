@@ -1,0 +1,23 @@
+.post-form{
+  margin: 10px 0 50px 0;
+  label {
+    margin: 10px 0;
+  }
+  .button-group {
+    margin: 16px 0;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 10px;
+      color: #f7f7f7 !important;
+      background-color: #7d5085bf !important;
+      border-color: #7d5085bf !important;
+
+      &:hover {
+        background-color: #7d5683 !important;
+        border-color: #7d5683 !important;
+      }
+    }
+  }
+}

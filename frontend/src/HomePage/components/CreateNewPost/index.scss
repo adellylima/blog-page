@@ -1,0 +1,17 @@
+.new-post{
+  display: flex !important;
+  place-items: center;
+  width: auto !important;
+  font-size: 45px !important;
+  color: #f9f9f9 !important;
+  padding: 0 !important;
+  border-radius: 100% !important;
+  background-color: #7d5085bf !important;
+  border-color: #7d5085bf !important;
+
+  :hover{
+    background-color: #7d5683 !important;
+    border-color: #7d5683 !important;
+    border-radius: 100% !important;
+  }
+}
