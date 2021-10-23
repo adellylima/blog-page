@@ -20,7 +20,7 @@ export default function PostList(values) {
     <Row className="posts-list">
       {allPosts.length===0 ?
         <Alert color="warning">
-          <span>There are no registered posts!".</span>
+          <span>There are no registered posts!"</span>
         </Alert>
         : allPosts}
     </Row>
