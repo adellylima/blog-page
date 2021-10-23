@@ -1,6 +1,8 @@
 import PostForm  from "../PostForm";
 import Post from "../Post";
 import React, { useState } from 'react'
+import { Col } from 'reactstrap';
+
 
 export default function EditPost(values) {
     const {id, title, author, text, onDeleteClick, onUpdateClick} = values;
@@ -33,18 +35,18 @@ export default function EditPost(values) {
           );
         }
         return (
-        <Post
-          title={title}
-          author={author}
-          text={text}
-          onEditClick={enterEditMode}
-          onDeleteClick={handleDelete}
-        />
+            <Post
+              title={title}
+              author={author}
+              text={text}
+              onEditClick={enterEditMode}
+              onDeleteClick={handleDelete}
+            />
       )
     }
       return (
-        <div>
+        <Col xs="6" sm="4">
           {component()}
-        </div>
+        </Col>
       )
   }

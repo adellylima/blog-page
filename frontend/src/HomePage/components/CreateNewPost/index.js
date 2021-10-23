@@ -32,6 +32,6 @@ export default function CreateNewPost(values) {
     )
   }
   return (
-    <Button onClick={handleCreateClick} className="new-post" title='Add new post'><FiPlusCircle /></Button>
+    <Button onClick={handleCreateClick} className="new-post-button" title='Add new post'>Add new post <FiPlusCircle /></Button>
   )
 }
